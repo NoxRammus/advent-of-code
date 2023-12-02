@@ -1,18 +1,5 @@
-import {
-  ascend,
-  findLastIndex,
-  head,
-  insert,
-  last,
-  prepend,
-  replace,
-  slice,
-  sum,
-  sortWith,
-  prop,
-} from "ramda";
+import { ascend, head, insert, last, sum, sortWith, prop } from "ramda";
 import input from "./input.json";
-import { updateLanguageServiceSourceFile } from "typescript";
 
 const regexes = [
   { pattern: /one/g, value: "1" },
@@ -78,7 +65,7 @@ const numbers = input.map((entry) => {
 });
 
 const concatedNumbers = numbers.map((numberArray) =>
-  Number(`${head(numberArray)}${last(numberArray)}`),
+  Number(`${head(numberArray)}${last(numberArray)}`)
 );
 
 const result = sum(concatedNumbers);
